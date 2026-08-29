@@ -1,6 +1,6 @@
 # MX-5 Driver Metrics Advanced
 
-App per Android Auto che mostra in tempo reale le metriche di guida della Mazda MX-5 ND 2019 (velocità, accelerazione/frenata, G laterali) e permette di registrare una sessione e riceverne il report via email, con analisi descrittiva dello stile di guida.
+App per Android Auto che mostra in tempo reale le metriche di guida della Mazda MX-5 ND 2019-2026 (velocità, accelerazione/frenata, G laterali) e permette di registrare una sessione e riceverne il report via email, con analisi descrittiva dello stile di guida.
 
 Applicazione indipendente sviluppata da Alberto Bernacchi, non affiliata, sponsorizzata o approvata da Mazda Motor Corporation.
 
