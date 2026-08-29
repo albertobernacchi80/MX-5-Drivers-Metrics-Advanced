@@ -1,0 +1,22 @@
+plugins { id 'com.android.application' }
+
+android { namespace 'com.mx5.driversmetrics'; compileSdk 36
+    // applicationId diverso da quello del progetto precedente (com.mx5.drivinginstruments),
+    // così le due app possono restare installate insieme sullo stesso telefono.
+    defaultConfig { applicationId 'com.mx5.driversmetrics'; minSdk 28; targetSdk 36; versionCode 2; versionName '1.5' }
+    packaging {
+        resources {
+            excludes += ['META-INF/LICENSE.txt', 'META-INF/LICENSE.md', 'META-INF/NOTICE.txt', 'META-INF/NOTICE.md', 'META-INF/DEPENDENCIES']
+        }
+    }
+}
+
+dependencies {
+    implementation 'androidx.car.app:app:1.7.0'
+    implementation 'androidx.car.app:app-projected:1.7.0'
+    implementation 'androidx.core:core:1.17.0'
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'androidx.security:security-crypto:1.1.0-alpha06'
+    implementation 'com.sun.mail:android-mail:1.6.7'
+    implementation 'com.sun.mail:android-activation:1.6.7'
+}

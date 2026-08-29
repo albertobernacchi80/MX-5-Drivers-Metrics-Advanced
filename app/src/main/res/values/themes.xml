@@ -1,0 +1,34 @@
+<resources>
+    <style name="CarAppTheme" parent="android:style/Theme.Material.NoActionBar">
+        <item name="android:fontFamily">sans</item>
+        <item name="android:colorAccent">#FF4D4D</item>
+    </style>
+
+    <!-- Tema separato per EmailSettingsActivity: è una AppCompatActivity normale sul
+         telefono e richiede un tema discendente da Theme.AppCompat, altrimenti va in
+         crash all'apertura ("You need to use a Theme.AppCompat theme..."). CarAppTheme
+         sopra resta invariato, usato solo dal CarAppService per Android Auto. -->
+    <style name="SettingsTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="colorAccent">#FF4D4D</item>
+        <item name="colorPrimary">#FF4D4D</item>
+        <item name="android:windowBackground">@color/settings_bg</item>
+    </style>
+
+    <style name="SettingsLabel">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/settings_dim</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginBottom">4dp</item>
+    </style>
+
+    <style name="SettingsInput">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/settings_field_bg</item>
+        <item name="android:textColor">@color/settings_text</item>
+        <item name="android:textColorHint">@color/settings_dim</item>
+        <item name="android:padding">10dp</item>
+    </style>
+</resources>

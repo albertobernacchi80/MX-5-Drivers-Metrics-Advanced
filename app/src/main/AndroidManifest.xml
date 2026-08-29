@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="androidx.car.app.NAVIGATION_TEMPLATES" />
+    <uses-permission android:name="androidx.car.app.ACCESS_SURFACE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- Per ReportSendService: invia il report (mappa/CSV/Excel/email) da un servizio in
+         primo piano, così il sistema non termina il processo dell'app a metà invio se il
+         quadro dell'auto viene spento e Android Auto si disconnette. -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
+    <!-- Solo per mostrare la notifica di avanzamento di ReportSendService (Android 13+);
+         se l'utente la nega il servizio funziona comunque, solo senza notifica visibile. -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <application android:name=".Mx5Application" android:theme="@style/CarAppTheme" android:label="@string/app_name" android:allowBackup="true" android:icon="@mipmap/ic_launcher" android:roundIcon="@mipmap/ic_launcher_round">
+        <meta-data android:name="androidx.car.app.minCarApiLevel" android:value="1" />
+        <meta-data android:name="com.google.android.gms.car.application" android:resource="@xml/automotive_app_desc" />
+        <meta-data android:name="androidx.car.app.theme" android:resource="@style/CarAppTheme" />
+        <service android:name=".MX5CarAppService" android:exported="true">
+            <intent-filter>
+                <action android:name="androidx.car.app.CarAppService" />
+                <category android:name="androidx.car.app.category.NAVIGATION" />
+            </intent-filter>
+        </service>
+
+        <!-- Genera e invia il report di una sessione (mappa/CSV/Excel/email) come servizio
+             in primo piano: vedi ReportSendService per il perché. -->
+        <service android:name=".ReportSendService" android:exported="false"
+                  android:foregroundServiceType="dataSync" />
+
+        <!-- Attività normale sul telefono (non guidabile in auto): qui si configurano
+             gli indirizzi email e i parametri SMTP per l'invio automatico dei report. -->
+        <activity android:name=".EmailSettingsActivity" android:exported="true"
+                  android:label="Impostazioni email - MX-5 Driver Metrics Advanced" android:theme="@style/SettingsTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

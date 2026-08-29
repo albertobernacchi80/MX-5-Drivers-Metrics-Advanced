@@ -1,0 +1,8 @@
+<resources>
+    <color name="black">#09090F</color>
+    <color name="settings_bg">#09090F</color>
+    <color name="settings_field_bg">#1B1B26</color>
+    <color name="settings_text">#F4F4FA</color>
+    <color name="settings_dim">#8888A0</color>
+    <color name="settings_accent">#FF4D4D</color>
+</resources>

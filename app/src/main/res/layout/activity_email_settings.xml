@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/settings_bg"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Impostazioni email report"
+            android:textColor="@color/settings_text"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Il report CSV con il percorso viene inviato automaticamente ogni volta che premi Arresta registrazione in auto."
+            android:textColor="@color/settings_dim"
+            android:textSize="13sp"
+            android:layout_marginBottom="20dp" />
+
+        <TextView style="@style/SettingsLabel" android:text="Destinatari (a chi arriva il report)" />
+        <EditText
+            android:id="@+id/et_to"
+            style="@style/SettingsInput"
+            android:hint="es. te@esempio.it, amico@esempio.it"
+            android:inputType="textEmailAddress" />
+
+        <TextView style="@style/SettingsLabel" android:text="Indirizzo mittente" />
+        <EditText
+            android:id="@+id/et_from"
+            style="@style/SettingsInput"
+            android:hint="da quale indirizzo parte l'email"
+            android:inputType="textEmailAddress" />
+
+        <TextView style="@style/SettingsLabel" android:text="Server SMTP" />
+        <EditText
+            android:id="@+id/et_smtp_host"
+            style="@style/SettingsInput"
+            android:hint="es. smtp.gmail.com"
+            android:inputType="textUri" />
+
+        <TextView style="@style/SettingsLabel" android:text="Porta SMTP" />
+        <EditText
+            android:id="@+id/et_smtp_port"
+            style="@style/SettingsInput"
+            android:hint="es. 587"
+            android:inputType="number" />
+
+        <TextView style="@style/SettingsLabel" android:text="Sicurezza connessione" />
+        <Spinner
+            android:id="@+id/spinner_security"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@color/settings_field_bg"
+            android:spinnerMode="dropdown"
+            android:layout_marginBottom="14dp" />
+
+        <TextView style="@style/SettingsLabel" android:text="Nome utente SMTP" />
+        <EditText
+            android:id="@+id/et_username"
+            style="@style/SettingsInput"
+            android:hint="di solito coincide con il mittente"
+            android:inputType="textEmailAddress" />
+
+        <TextView style="@style/SettingsLabel" android:text="Password SMTP" />
+        <EditText
+            android:id="@+id/et_password"
+            style="@style/SettingsInput"
+            android:hint="password o password per app"
+            android:inputType="textPassword" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Immagine del percorso"
+            android:textColor="@color/settings_text"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginTop="22dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chiave gratuita da geoapify.com (registrazione solo con email, nessuna carta di credito). Senza chiave il report parte comunque, ma senza l'immagine della mappa."
+            android:textColor="@color/settings_dim"
+            android:textSize="13sp"
+            android:layout_marginTop="2dp" />
+
+        <TextView style="@style/SettingsLabel" android:text="Chiave API Geoapify" />
+        <EditText
+            android:id="@+id/et_geoapify_key"
+            style="@style/SettingsInput"
+            android:hint="incolla qui la chiave API"
+            android:inputType="textPassword" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="20dp">
+
+            <CheckBox
+                android:id="@+id/checkbox_auto_send"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Invia automaticamente il report via email quando fermo la registrazione"
+                android:textColor="@color/settings_text"
+                android:textSize="14sp"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Salva impostazioni"
+            android:backgroundTint="@color/settings_accent"
+            android:textColor="@color/settings_text" />
+
+        <TextView
+            android:id="@+id/text_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/settings_dim"
+            android:textSize="13sp"
+            android:layout_marginTop="12dp" />
+
+    </LinearLayout>
+</ScrollView>
