@@ -12,7 +12,7 @@ Applicazione indipendente sviluppata da Alberto Bernacchi, non affiliata, sponso
 - **Report automatico via email**: a fine registrazione vengono generati un CSV (formato italiano, pronto per Excel) e un file Excel con già pronto un grafico dell'andamento dei valori, inviati in automatico se configurato. Il corpo dell'email include un'analisi descrittiva in linguaggio naturale dello stile di guida, che si adatta al percorso: sotto 1 km spiega che i dati non bastano per un'analisi attendibile (CSV, Excel e mappa restano comunque allegati); se il percorso GPS ripassa più volte dallo stesso punto viene riconosciuto come circuito, con tempi giro, regolarità e consigli mirati per migliorare; negli altri casi il percorso viene classificato come urbano, misto o extraurbano in base ai dati (soste, velocità, andatura). Il report include anche un'immagine del percorso su mappa OpenStreetMap con marker correlati ai momenti salienti.
 - **Analisi di sessione**: distanza, velocità media/massima, indice di fluidità, frenate rilevate, G medi e massimi, consultabili direttamente in auto.
 - **Impostazioni email**: schermata separata sul telefono (fuori da Android Auto) per destinatari, mittente, parametri SMTP, invio automatico e chiave API Geoapify (gratuita) per la mappa del percorso.
-- **Guida agli indicatori** e **Crediti** consultabili in auto con la rotella.
+- **Guida agli indicatori** e **Crediti** consultabili in auto con la rotellina di controllo dei menu.
 
 ## Affidabilità
 
@@ -22,7 +22,7 @@ Applicazione indipendente sviluppata da Alberto Bernacchi, non affiliata, sponso
 ## Requisiti
 
 - Telefono Android con Android Auto.
-- Un'auto compatibile con Android Auto (proiezione via cavo o wireless), oppure Android Auto Desktop Head Unit (DHU) per il test.
+- Un'auto compatibile con Android Auto (proiezione via cavo o wireless).
 - Non è disponibile su Google Play: l'installazione avviene manualmente (vedi sotto).
 
 ## Installazione
@@ -37,7 +37,7 @@ Se è già disponibile una build, scarica `MX-5 Drivers Metrics.apk` dalla sezio
 2. Vai su **Actions → Build APK → Run workflow**.
 3. A esecuzione completata, apri quell'esecuzione e scarica l'artifact **MX5-AndroidAuto-debug**: contiene `MX-5 Drivers Metrics.apk`.
 
-Per i dettagli passo passo su installazione, modalità sviluppatore su Android Auto e configurazione, vedi il manuale incluso nel repository (`Mx5DriversMetricsManual_completo.pdf`).
+Per i dettagli passo passo su installazione, modalità sviluppatore su Android Auto e configurazione, vedi il manuale incluso nel repository (`Mx5DriversMetricsManual.pdf`).
 
 ## Nota sui dati
 
